@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-| Content                      |
-| ------------- ---------------|
-| [Challenges](CC1/README.md)  |
+| Content                    |
+| -------------------------- |
+| [Challenges](CC1/README.md) |
 
