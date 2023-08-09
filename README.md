@@ -4,5 +4,6 @@
 
 | Content                    |
 | -------------------------- |
-| [Challenges](CC1/README.md) |
+| [Challenge1](CC1/README.md) |
+| [Challenge2](CC2/README.md) |
 
