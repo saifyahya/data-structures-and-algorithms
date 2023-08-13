@@ -1,5 +1,5 @@
 # array-binary-search
-Write a function called binarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the value of the search key, or -1 if the element is not in the array.
+Write a function called binarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the value of the search key, or -1 if the element does not exist in the array.
 
 ## Whiteboard Process
 ![Whiteboard](../assets/whiteboard-cc3.png)
@@ -10,16 +10,16 @@ Write a function called binarySearch which takes in 2 parameters: a sorted array
 2. Declare a While loop with a condition (L <= H).
 3. initialize M = (L+H) / 2 .
 4. inside the loop make some conditions:
-    a. if key == array[M]:
-        return M
-    b. if key > array[M]:
-        modify L = M+1
-    c. if ikey < array[M]:
-        modify H = M-1
+a. if key == array[M]:
+return M
+b. if key > array[M]:
+modify L = M+1
+c. if ikey < array[M]:
+modify H = M-1
 5. if no case satisfied and the loop condition broken, return -1.
 - Efficiency
-Time: O(log n)
-space: O(1)
+1. Time: O(log n)
+2. Space: O(1)
 
 ## Solution
 ![Solution1](../assets/cc3-1.png)
