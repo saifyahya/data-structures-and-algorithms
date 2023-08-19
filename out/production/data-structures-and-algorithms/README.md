@@ -2,10 +2,9 @@
 
 ## Table of contents
 
-| Content                     |
-|-----------------------------|
+| Content                    |
+| -------------------------- |
 | [Challenge1](CC1/README.md) |
 | [Challenge2](CC2/README.md) |
 | [Challenge3](CC3/README.md) |
-| [Challenge5](CC5/README.md) |
 
