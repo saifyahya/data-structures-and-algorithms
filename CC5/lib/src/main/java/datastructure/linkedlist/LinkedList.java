@@ -2,28 +2,28 @@ package CC5.lib.src.main.java.datastructure.linkedlist;
 
 public class LinkedList {
     public Node head;
-    public Node tail;
-    private class Node {
+    private Node tail;
+    public static class Node {
         public int data;
         private Node next;
-       public Node(int data) {
+        public Node(int data) {
             this.data = data;
         }
 
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return (head == null);
     }
 
     public void insertAtTop(int value) {
+        Node newNode = new Node(value);
         if (isEmpty()) {
-            head = new Node(value);
-            tail= new Node(value);
+            head= newNode;
+            tail = newNode;
         } else {
-            Node newNode = new Node(value);
             newNode.next = head;
-            head = newNode;
+            head=newNode;
         }
     }
     public boolean include(int value) {
@@ -41,23 +41,25 @@ public class LinkedList {
         if (isEmpty())
             return list;
         Node current = head;
-            while (current != null) {
-                list += current.data+" -> ";
-                current = current.next;
-            }
-            list += "NULL";
+        while (current != null) {
+            list += current.data+" -> ";
+            current = current.next;
+        }
+        list += "NULL";
         return list;
     }
     public void insertAtEnd(int value) {
         Node newNode = new Node(value);
-        if(isEmpty()){
-            tail= newNode;
-            head= newNode;
+        if (isEmpty()) {
+            tail=newNode;
+            head = newNode;
+        } else {
+            tail.next=newNode;
+            tail = newNode;
+
         }
-        else{
-        tail.next=newNode;
-        tail=newNode;}
     }
+
     public void insertBefore(int value,int newValue) {
         Node newNode = new Node(newValue);
         if(isEmpty())
@@ -67,11 +69,18 @@ public class LinkedList {
             insertAtTop(newValue);
             return;}
         while(current!=null) {
-            if(current.next.data==value){
-                newNode.next=current.next;
-                current.next=newNode;
-                break;
-            }
+            if(current.next==null){ // to solve pointer null exception when current.next==null, we can't access its data
+                if(current.data==value){
+                    newNode.next=current.next;
+                    current.next=newNode;
+                    break;
+                }}
+            else{
+                if(current.next.data==value){
+                    newNode.next=current.next;
+                    current.next=newNode;
+                    break;
+                }}
             current=current.next;
         }
     }

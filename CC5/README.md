@@ -42,5 +42,10 @@ Linked List implementation: toString , insertAtTop, include, insertAtEnd, insert
   current.next=newNode;
 - efficiency: time O(n), space O(1).
 
+## Solution 
+![LinkedList](../assets/linked%20list%20solution.png)
+![LinkedList1](../assets/linked%20list%20solution1.png)
+
+
 
 
