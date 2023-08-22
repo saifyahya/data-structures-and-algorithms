@@ -101,4 +101,28 @@ public class LinkedList {
             current=current.next;
         }
     }
+    public int getLength() {
+        int count =0;
+        Node current =head;
+        while (current!=null) {
+            current=current.next;
+            count++;
+        }
+        return count;
+    }
+    public String kthFromEnd(int indexFromEnd) {
+        int currentIndex=1;  // navigate to first index from the top
+        int listLength=this.getLength();
+        int desiredIndex=listLength-indexFromEnd;
+        if(desiredIndex>listLength || desiredIndex<=0) //in case negative number, empty list, invalid number(number=listLength)
+            return " kth index does not exist";
+        Node current = head;
+        if(desiredIndex==currentIndex)  // handle first element in the list
+            return Integer.toString(current.data);
+        while(desiredIndex>currentIndex) {
+            current=current.next; 
+            currentIndex++;
+        }
+        return Integer.toString(current.data);
+    }
 }
