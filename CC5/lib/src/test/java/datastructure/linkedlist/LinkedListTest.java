@@ -72,5 +72,25 @@ public class LinkedListTest {
         String expectedResult = "1 -> 2 -> 3 -> NULL";
         Assertions.assertEquals(expectedResult,result.toString());
     }
+
+    @Test void testKthIndexFromEnd() {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insertAtTop(3);
+        linkedList.insertAtTop(2);
+        linkedList.insertAtTop(1);
+        String result = linkedList.kthFromEnd(4);      // Where k is greater than the length of the linked list
+        Assertions.assertEquals("kth index does not exist",result);
+        String result2 = linkedList.kthFromEnd(3);     // Where k is the same as the length of the linked list
+        Assertions.assertEquals("kth index does not exist",result2);
+        String result3 = linkedList.kthFromEnd(-1);      // Where k is not a positive integer
+        Assertions.assertEquals("kth index does not exist",result3);
+        String result4 = linkedList.kthFromEnd(1); // “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+        Assertions.assertEquals("2",result4);
+        LinkedList linkedList2 = new LinkedList();     // New Linked List of Size 1
+        linkedList2.insertAtTop(1);
+        String result5 = linkedList2.kthFromEnd(0);// Where the linked list is of a size 1
+        Assertions.assertEquals("1",result5);
+    }
+
 }
 

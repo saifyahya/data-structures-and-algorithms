@@ -115,7 +115,7 @@ public class LinkedList {
         int listLength=this.getLength();
         int desiredIndex=listLength-indexFromEnd;
         if(desiredIndex>listLength || desiredIndex<=0) //in case negative number, empty list, invalid number(number=listLength)
-            return " kth index does not exist";
+            return "kth index does not exist";
         Node current = head;
         if(desiredIndex==currentIndex)  // handle first element in the list
             return Integer.toString(current.data);

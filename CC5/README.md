@@ -7,9 +7,6 @@ Linked List implementation: toString , insertAtTop, include, insertAtEnd, insert
 ![Whiteboard](../assets/Whiteboard-insert.png)
 
 ![Whiteboard](../assets/Whiteboard-include.png)
-
-## Solution
-![LinkedList](../assets/linked%20list%20solution.png)
 ---
 ![Whiteboard](../assets/inertAtEnd-Whiteboard.png)
 ## Approach and efficiency
@@ -47,6 +44,7 @@ Linked List implementation: toString , insertAtTop, include, insertAtEnd, insert
 
 ## Solution
 ![LinkedList2](../assets/linked%20list%20solution1.png)
+![LinkedList](../assets/linked%20list%20solution.png)
 ---
 ![Whiteboard](../assets/kthFromEnd-Whiteboard.png)
 ## Approach and efficiency
@@ -60,6 +58,7 @@ Linked List implementation: toString , insertAtTop, include, insertAtEnd, insert
 6. traverse the list until desiredIndex= curentIndex
   return current.data
 - efficiency: time O(n), space O(1).
+- 
 ## Solution 
 ![LinkedList3](../assets/solution-lab7.png)
 
