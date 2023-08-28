@@ -58,7 +58,7 @@ Linked List implementation: toString , insertAtTop, include, insertAtEnd, insert
 6. traverse the list until desiredIndex= curentIndex
   return current.data
 - efficiency: time O(n), space O(1).
-- 
+---
 ## Solution 
 ![LinkedList3](../assets/solution-lab7.png)
 
