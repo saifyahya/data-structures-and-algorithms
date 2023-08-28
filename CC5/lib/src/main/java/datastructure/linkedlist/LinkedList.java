@@ -56,7 +56,6 @@ public class LinkedList {
         } else {
             tail.next=newNode;
             tail = newNode;
-
         }
     }
 
@@ -89,13 +88,14 @@ public class LinkedList {
         if(isEmpty())
             return;
         Node current = head;
-        if(current.data==value){
-            insertAtEnd(newValue);
-            return;}
         while(current!=null) {
             if(current.data==value){
                 newNode.next=current.next;
                 current.next=newNode;
+
+                if (current == tail) {   // if I insert after the tail update it
+                    tail = newNode;
+                }
                 break;
             }
             current=current.next;
@@ -115,14 +115,37 @@ public class LinkedList {
         int listLength=this.getLength();
         int desiredIndex=listLength-indexFromEnd;
         if(desiredIndex>listLength || desiredIndex<=0) //in case negative number, empty list, invalid number(number=listLength)
-            return "kth index does not exist";
+            return " kth index does not exist";
         Node current = head;
         if(desiredIndex==currentIndex)  // handle first element in the list
             return Integer.toString(current.data);
         while(desiredIndex>currentIndex) {
-            current=current.next; 
+            current=current.next;
             currentIndex++;
         }
         return Integer.toString(current.data);
+    }
+    public static LinkedList zipLists(LinkedList list1, LinkedList list2) {
+        if(list1.isEmpty() )
+            return list2;
+        else if (list2.isEmpty())
+            return list1;
+        else {
+            Node current1 = list1.head;
+            Node current2= list2.head;
+            while(current1!=null || current2!=null) {
+                if(current1!=null && current2!=null){
+                    list1.insertAfter(current1.data,current2.data);
+                    current1=current1.next.next;
+                    current2=current2.next;
+                }
+                else if (current2!=null){
+                    list1.insertAtEnd(current2.data);
+                    current2=current2.next;}
+                else
+                    break;
+            }
+        }
+        return  list1;
     }
 }

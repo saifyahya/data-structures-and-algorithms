@@ -91,6 +91,52 @@ public class LinkedListTest {
         String result5 = linkedList2.kthFromEnd(0);// Where the linked list is of a size 1
         Assertions.assertEquals("1",result5);
     }
-
+    @Test public void testZipLists()        // test zipping two lists into one list  in case equal lengths
+    {
+        LinkedList linkedList1 = new LinkedList();
+        linkedList1.insertAtTop(3);
+        linkedList1.insertAtTop(2);
+        linkedList1.insertAtTop(1);
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.insertAtTop(6);
+        linkedList2.insertAtTop(5);
+        linkedList2.insertAtTop(4);
+        LinkedList actualResult= LinkedList.zipLists(linkedList1,linkedList2);
+        LinkedList expectedResult = new LinkedList();
+        expectedResult.insertAtTop(6);
+        expectedResult.insertAtTop(3);
+        expectedResult.insertAtTop(5);
+        expectedResult.insertAtTop(2);
+        expectedResult.insertAtTop(4);
+        expectedResult.insertAtTop(1);
+        Assertions.assertEquals(expectedResult.toString(),actualResult.toString());
+    }
+    @Test public void testZipLists2()        // test zipping two lists into one list  in different lengths
+    {
+        LinkedList linkedList1 = new LinkedList();
+        linkedList1.insertAtTop(3);
+        linkedList1.insertAtTop(2);
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.insertAtTop(6);
+        linkedList2.insertAtTop(5);
+        linkedList2.insertAtTop(4);
+        LinkedList actualResult= LinkedList.zipLists(linkedList1,linkedList2);
+        LinkedList expectedResult = new LinkedList();
+        expectedResult.insertAtTop(6);
+        expectedResult.insertAtTop(5);
+        expectedResult.insertAtTop(3);
+        expectedResult.insertAtTop(4);
+        Assertions.assertEquals(expectedResult.toString(),actualResult.toString());
+    }
+    @Test public void testZipLists3()        // test zipping two lists into one list  with one list empty
+    {
+        LinkedList linkedList1 = new LinkedList();
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.insertAtTop(6);
+        linkedList2.insertAtTop(5);
+        linkedList2.insertAtTop(4);
+        LinkedList actualResult= LinkedList.zipLists(linkedList1,linkedList2);
+        Assertions.assertEquals(linkedList2.toString(),actualResult.toString());
+    }
 }
 
