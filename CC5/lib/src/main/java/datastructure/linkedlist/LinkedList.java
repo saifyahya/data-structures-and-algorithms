@@ -148,4 +148,32 @@ public class LinkedList {
         }
         return  list1;
     }
+    public static boolean isPalindrome(LinkedList list){
+        if(list.getLength()==1)
+            return true;
+        if(list.getLength()==0)
+            return false;
+        int x=0;
+        int counter=(list.getLength()/2)-1;
+        Node n1=list.head;
+        String data1= String.valueOf(n1.data);
+        int y=0;
+        int n2Position=((list.getLength()%2==0)?(list.getLength()/2):(list.getLength()/2)+1);
+        Node n2 = list.head;
+        String data2= String.valueOf(n2.data);
+        while(y<n2Position) { n2=n2.next; y++; data2= String.valueOf(n2.data);}  // put n2 to the second half of the list
+        while(counter>=0) {                                                   // compare half of elements in the list
+            while(x<counter) { n1=n1.next; x++; data1= String.valueOf(n1.data);}  // put n1 to the correct position in each iteration
+            if(!data1.equals(data2))  // comparing data
+                return false;
+            n2=n2.next; // moving n2 to the next node
+            if(n2!=null)  // to prevent null pointer exception
+                data2= String.valueOf(n2.data);
+            x=0;
+            n1=list.head;  // return n1 to the first node
+            data1= String.valueOf(n1.data);
+            counter--;    // decrease counter of n1
+        }
+        return true;
+    }
 }

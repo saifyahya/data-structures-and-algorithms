@@ -138,5 +138,35 @@ public class LinkedListTest {
         LinkedList actualResult= LinkedList.zipLists(linkedList1,linkedList2);
         Assertions.assertEquals(linkedList2.toString(),actualResult.toString());
     }
+    @Test public void  testIsPalindrome(){  // palindrome: true
+        LinkedList linkedList = new LinkedList();
+        linkedList.insertAtTop(1);
+        linkedList.insertAtTop(2);
+        linkedList.insertAtTop(1);
+boolean expectedResult = true;
+boolean actualResult= LinkedList.isPalindrome((linkedList));
+Assertions.assertEquals(expectedResult,actualResult);
+    }
+    @Test public void  testIsPalindrome1(){ // palindrome: false
+        LinkedList linkedList = new LinkedList();
+        linkedList.insertAtTop(1);
+        linkedList.insertAtTop(2);
+        boolean expectedResult = false;
+        boolean actualResult= LinkedList.isPalindrome((linkedList));
+        Assertions.assertEquals(expectedResult,actualResult);
+    }
+    @Test public void  testIsPalindrome2(){    // one element palindrome: true
+        LinkedList linkedList = new LinkedList();
+        linkedList.insertAtTop(1);
+        boolean expectedResult = true;
+        boolean actualResult= LinkedList.isPalindrome((linkedList));
+        Assertions.assertEquals(expectedResult,actualResult);
+    }
+    @Test public void  testIsPalindrome3(){  // empty list palindrome:false
+        LinkedList linkedList = new LinkedList();
+        boolean expectedResult = false;
+        boolean actualResult= LinkedList.isPalindrome((linkedList));
+        Assertions.assertEquals(expectedResult,actualResult);
+    }
 }
 
