@@ -103,6 +103,6 @@ Putting two pointers: n1, n2 to iterate over the first and second halfs of the l
 ![LinkedList](../assets/cc9-1.png)
 ![LinkedList](../assets/cc9-2.png)
 ![LinkedList](../assets/cc9-3.png)
-
+ 
 
 
