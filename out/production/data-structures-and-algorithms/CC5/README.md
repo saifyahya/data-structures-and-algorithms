@@ -83,6 +83,26 @@ insert after the value of current1, the value of current2, and increase current1
 ![LinkedList](../assets/cc8-1.png)
 ![LinkedList](../assets/cc8-2.png)
 ![LinkedList](../assets/cc8-3.png)
-
+---
+# Linked List (CC9)
+Linked List implementation: isPalindrome.
+![Whiteboard](../assets/isPalindrome-Whiteboard.png)
+## Approach and efficiency
+Putting two pointers: n1, n2 to iterate over the first and second halfs of the list respectively, and compare their values:
+- n1 points to the first node
+- n2 points to the first node in the second half of the list
+- counter = number of nodes in the first half for iteration (the number of the last node in the first half)
+  while(counter >= 0):
+- make n1 points to node number = counter
+- compare data of n1 and n2:
+  if not equals: return false
+- else: move n2 to the next node
+- reduce counter by 1 and reposition n1 to point to the previous node (counter value)
+- efficiency: time O(n), space O(1).
+## Solution
+![LinkedList](../assets/cc9-1.png)
+![LinkedList](../assets/cc9-2.png)
+![LinkedList](../assets/cc9-3.png)
+ 
 
 

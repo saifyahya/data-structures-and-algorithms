@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
 
 public class Stack<T> {
     private Node<T> top;
-    private int length;
+    protected int length;
 
     public Stack() {
         top =null;
@@ -13,11 +13,12 @@ public class Stack<T> {
     public void push(T data) {
         Node<T> temp =new Node<>(data);
         temp.next=top;
+        top=temp;
         length++;
     }
     public T pop() {
-      /*  if(isEmpty())
-            throw EmptyStackException;*/
+        if(isEmpty())
+            throw new EmptyStackException();
         T result = top.data;
         top=top.next;
         length--;
@@ -30,8 +31,9 @@ public class Stack<T> {
         return length;
     }
     public T peak() {
-       /* if (isEmpty())
-            throw EmptyStackException;*/
+        if (isEmpty())
+            throw new EmptyStackException();
         return top.data;
     }
+
 }
