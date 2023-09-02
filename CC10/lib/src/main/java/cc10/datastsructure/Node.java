@@ -1,7 +1,7 @@
 package CC10.lib.src.main.java.cc10.datastsructure;
 
 public class Node <T>{
-    T data;
+    protected T data;
     Node<T> next;
 
     public Node(T data) {
