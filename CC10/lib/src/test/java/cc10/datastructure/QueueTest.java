@@ -1,8 +1,10 @@
 package CC10.lib.src.test.java.cc10.datastructure;
 
 import CC10.lib.src.main.java.cc10.datastsructure.Queue;
+import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.NoSuchElementException;
 
@@ -38,9 +40,15 @@ public class QueueTest {
         Queue<Integer> queue= new Queue<>();
         Assertions.assertEquals(true,queue.isEmpty());
     }
-    @Test void testNoSuchElementException() {         // Calling dequeue or peek on empty queue raises exception
-        Queue<Integer> queue= new Queue<>();
-        Assertions.assertEquals(new NoSuchElementException("Empty Queue"),queue.dequeue());
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
+
+    @Test
+    public void testNoSuchElementException() {
+        Queue<Integer> queue = new Queue();
+        exception.expect(NoSuchElementException.class);
+        exception.expectMessage("Empty Queue");
+        queue.dequeue(); // This should raise a NoSuchElementException with the expected message
     }
 
 }
