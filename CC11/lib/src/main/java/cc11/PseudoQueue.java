@@ -27,6 +27,14 @@ public class PseudoQueue <T> {
             stack2.push(stack1.pop());
         }
         length--;
-        return stack2.pop();
+        T poppedItem = stack2.pop();
+        while (stack2.length!=0){   //return the new queue to stack1
+            stack1.push(stack2.pop());
+        }
+        return poppedItem;
+    }
+
+    public int getLength() {
+        return length;
     }
 }
