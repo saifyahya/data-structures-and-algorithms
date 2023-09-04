@@ -126,6 +126,7 @@ public class LinkedListTest {
         expectedResult.insertAtTop(5);
         expectedResult.insertAtTop(3);
         expectedResult.insertAtTop(4);
+        expectedResult.insertAtTop(2);
         Assertions.assertEquals(expectedResult.toString(),actualResult.toString());
     }
     @Test public void testZipLists3()        // test zipping two lists into one list  with one list empty
