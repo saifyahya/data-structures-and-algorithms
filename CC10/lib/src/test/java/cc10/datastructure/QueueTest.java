@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 public class QueueTest {
@@ -40,15 +41,10 @@ public class QueueTest {
         Queue<Integer> queue= new Queue<>();
         Assertions.assertEquals(true,queue.isEmpty());
     }
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
 
-    @Test
-    public void testNoSuchElementException() {
+    @Test public void testNoSuchElementException() {    //dequeue or call peak method on empty queue will throw exception
         Queue<Integer> queue = new Queue();
-        exception.expect(NoSuchElementException.class);
-        exception.expectMessage("Empty Queue");
-        queue.dequeue(); // This should raise a NoSuchElementException with the expected message
+        Assertions.assertThrows( NoSuchElementException.class, () -> queue.peak(),"Empty Queue");
     }
 
 }
