@@ -1,8 +1,6 @@
 package CC11.lib.src.main.java.cc11;
 
 import CC10.lib.src.main.java.cc10.datastsructure.Stack;
-
-import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 public class PseudoQueue <T> {
@@ -33,7 +31,6 @@ public class PseudoQueue <T> {
         }
         return poppedItem;
     }
-
     public int getLength() {
         return length;
     }
