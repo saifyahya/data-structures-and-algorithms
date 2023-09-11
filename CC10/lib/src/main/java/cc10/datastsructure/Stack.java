@@ -1,7 +1,5 @@
 package CC10.lib.src.main.java.cc10.datastsructure;
 
-import org.junit.jupiter.api.function.Executable;
-
 import java.util.EmptyStackException;
 
 public class Stack<T> {
