@@ -1,11 +1,8 @@
 package CC10.lib.src.test.java.cc10.datastructure;
 
 import CC10.lib.src.main.java.cc10.datastsructure.Stack;
-import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
-import org.junit.rules.ExpectedException;
 
 import java.util.EmptyStackException;
 
