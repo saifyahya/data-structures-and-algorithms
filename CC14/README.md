@@ -1,9 +1,6 @@
 ## Queue Duck Dose Game
 DuckDuckGoose() function accepts an array of strings and an int k. Start at the beginning and count up to k and remove the person at that position. Keep counting from that index and count up to k over and over until only one person is left. Return a string with the name of the last person left.
 
-- **enqueue(Animal)**
-- enqueue Animal from the shelter ensuring *F-I-F-O*, where Animal species is either dog or cat.
-- implements enqueue() and dequeue()
 ## Whiteboard Process
 ![Whiteboard](../assets/DuckGameQueue-Whiteboard.png)
 

@@ -12,6 +12,8 @@
 | [Challenge11 (PseudoQueue)](CC11/README.md)             |
 | [Challenge12 (Animal Shelter Queue)](CC12/README.md)    |
 | [Challenge13 (Stack Validate Brackets)](CC13/README.md) |
+| [Challenge14 (Queue Duck Game)](CC14/README.md)         |
+
 
 
 
