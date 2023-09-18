@@ -5,16 +5,23 @@ package CC15.app.src.main.java.cc15.app;
 
 
 import CC15.app.src.main.java.cc15.app.BinaryTree.*;
-import java.util.ArrayList;
+
+
 
 public class App {
     public static void main(String[] args) {
-        BinaryTree tree =new BinaryTree();
-        tree.createBinaryTree();//    3 <--1--> 2
-        System.out.println(tree.iterativePreOrderTraversal(tree.getRoot()));
-        System.out.println();
-        System.out.println(tree.iterativeInOrderTraversal(tree.getRoot()));
-        System.out.println();
-        System.out.println(tree.iterativePostOrderTraversal(tree.getRoot()));
+//        BinaryTree tree =new BinaryTree();
+//        tree.createBinaryTree();//    3 <--1--> 2
+//        System.out.println(tree.iterativePreOrderTraversal(tree.getRoot()));
+//        System.out.println();
+//        System.out.println(tree.iterativeInOrderTraversal(tree.getRoot()));
+//        System.out.println();
+//        System.out.println(tree.iterativePostOrderTraversal(tree.getRoot()));
+
+        ////// BST
+        BinarySearchTree bst = new BinarySearchTree();
+      bst.createBinarySearchTree();         //   2 <--1--> 3
+        bst.insertNumberAtBST(5);
+        System.out.println("value founded: "+bst.search(5));
     }
 }

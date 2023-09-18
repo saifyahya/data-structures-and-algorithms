@@ -6,18 +6,30 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class BinaryTree {
-    private TreeNode root;
+    protected TreeNode root;
     public static class TreeNode <T>{
-        private T data;
-        private TreeNode<T> left;
-        private TreeNode<T> right;
+        protected T data;
+        protected TreeNode<T> left;
+        protected TreeNode<T> right;
 
         public TreeNode(T data) {
             this.data = data;
         }
 
 
+        public TreeNode<T> getLeft() {
+            return left;
+        }
+
+        public TreeNode<T> getRight() {
+            return right;
+        }
+
+        public T getData() {
+            return data;
+        }
     }
+
         public void createBinaryTree() {                //    3 <--1--> 2
             TreeNode <Integer> first = new TreeNode<>(1);
             TreeNode <Integer> second = new TreeNode<>(2);
@@ -128,6 +140,10 @@ public int treeMaxValue(TreeNode root) {
 }
     public TreeNode getRoot() {
         return root;
+    }
+
+    public void setRoot(TreeNode root) {
+        this.root = root;
     }
 }
 

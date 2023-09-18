@@ -13,7 +13,7 @@
 | [Challenge12 (Animal Shelter Queue)](CC12/README.md)               |
 | [Challenge13 (Stack Validate Brackets)](CC13/README.md)            |
 | [Challenge14 (Queue Duck Game)](CC14/README.md)                    |
-| [Challenge14 (Binary Tree and Binary Search Tree)](CC14/README.md) |
+| [Challenge15 (Binary Tree and Binary Search Tree)](CC15/README.md) |
 
 
 
