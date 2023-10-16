@@ -5,22 +5,22 @@ This algorithm defines 2 functions:
 - This algorithm create *a new sorted array* from the input array.
 
 ## Pseudocode
-`Insert(int[] sorted, int value, int numberOfSortedElements)
-initialize i to 0
-WHILE value > sorted[i]
-set i to i + 1
-WHILE i < sorted.length
-set temp to sorted[i]
-set sorted[i] to value
-set value to temp
-set i to i + 1
+` Insert(int[] sorted, int value, int numberOfSortedElements)
+- initialize i to 0
+- WHILE value > sorted[i]
+- set i to i + 1
+- WHILE i < sorted.length
+- set temp to sorted[i]
+- set sorted[i] to value
+- set value to temp
+- set i to i + 1
 
-InsertionSort(int[] input)
-LET sorted = New Empty Array
-sorted[0] = input[0]
-FOR i from 1 up to input.length
-Insert(sorted, input[i], i)
-return sorted`
+- InsertionSort(int[] input)
+- LET sorted = New Empty Array
+- sorted[0] = input[0]
+- FOR i from 1 up to input.length
+- Insert(sorted, input[i], i)
+- return sorted`
 
 
 ## Blog Article
