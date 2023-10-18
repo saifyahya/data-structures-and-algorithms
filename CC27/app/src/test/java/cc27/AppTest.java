@@ -3,9 +3,19 @@
  */
 package CC27.app.src.test.java.cc27;
 
+import CC27.app.src.main.java.cc27.MergeSort;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-
+@Test public void testMergeSort(){
+    int sampleArray[]={8,4,23,42,16,15};
+    MergeSort.mergeSort(sampleArray);
+    int expectedOutput[] ={4,8,15,16,23,42};
+    Assertions.assertEquals(Arrays.toString( expectedOutput),Arrays.toString( sampleArray));
+}
 }
