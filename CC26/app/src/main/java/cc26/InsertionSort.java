@@ -30,4 +30,15 @@ public class InsertionSort {
         }
         System.out.println();
     }
+
+    public static void insertionSortOnPlace(int array[]){
+    for(int i = 0 ; i < array.length ; i++) {
+        int temp= array[i], j=i-1;
+        while(j>=0 && temp<array[j]) {
+            array[j+1]=array[j];
+            array[j]=temp;
+            j--;
+        }
+    }
+    }
 }
