@@ -18,6 +18,9 @@
 | [Challenge17 (Binary Tree (Breadth Traversal))](CC17/README.md)    |
 | [Challenge18 (k-ary Tree (Fizz-Buzz))](CC18/README.md)             |
 | [Challenge19 (Binary Trees Leafs-Compare)](CC19/README.md)         |
+| [Challenge26 (Insertion-Sort)](CC26/README.md)         |
+
+       
 
 
 

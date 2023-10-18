@@ -5,6 +5,8 @@ it is a function that check each node in k-ary Tree and return a new tree struct
 - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
 - If the value is not divisible by 3 or 5, simply turn the number into a String.
 
+## Whiteboard Process
+![Whiteboard](../assets/CC18-Whiteboard.png)
 
 ## Approach and Efficiency 
 - take the root node of the k-ary Tree
