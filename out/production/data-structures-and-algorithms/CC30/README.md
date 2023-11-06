@@ -62,20 +62,10 @@
 ## `computeOnPlace()`
 
 **Approach**:
-- The `computeOnPlace()` method calculates the number of appearance of each word in a string.
-- It maps every word in the text to the current hashmap with a value of 1 and if the key (word) is repeated in the text it increases its value in the map.
+- The `computeOnPlace()` method calculates a hash code for a given key using Java's `hashCode` method.
+- It takes the absolute value of the hash code and calculates the remainder when divided by the size of the hash map (the number of buckets) to determine the bucket index where the key should be stored.
 
 **Efficiency**:
-- Time Complexity: O(N*K), N:the number of words in the text, K: the number of the unique words.
-- Space Complexity: O(1), as it does not create additional data structures that depend on the input size.
-
-## `keyWithMaxValue()`
-
-**Approach**:
-- The `keyWithMaxValue()` method finds the key stored in the hash map with the largest value.
-- It searches in every bucket of the map for the values and compare them to return the key associated with the maximum value. If two keys have the same greatest value it returns the first counted one (key in the top bucket).
-
-**Efficiency**:
-- Time Complexity: O(N*K), N:the number of buckets, K: the number of the unique keys.
+- Time Complexity: O(1), because it performs a fixed number of operations regardless of the input size.
 - Space Complexity: O(1), as it does not create additional data structures that depend on the input size.
 
