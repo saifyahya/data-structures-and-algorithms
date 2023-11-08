@@ -12,6 +12,14 @@ public class BinaryTree {
         protected TreeNode<T> left;
         protected TreeNode<T> right;
 
+        public void setLeft(TreeNode<T> left) {
+            this.left = left;
+        }
+
+        public void setRight(TreeNode<T> right) {
+            this.right = right;
+        }
+
         public TreeNode(T data) {
             this.data = data;
         }
