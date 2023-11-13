@@ -22,6 +22,8 @@
 | [Challenge27 (Merge-Sort)](CC27/README.md)                                                   |
 | [Challenge30 (Hashmap:set, get, contains keys, mostRepeatedString(compute))](CC30/README.md) |
 | [Challenge31 (first repeated word)](CC31/README.md)                                          |
+| [Challenge32 (Trees Intersection)](CC32/README.md)                                           |
+
 
 
        
