@@ -35,5 +35,11 @@ class AppTest {
         right.setRight(right3);
         List<Integer> expectedIntersections = List.of(1,2,3);
         Assertions.assertEquals(expectedIntersections, TreeIntersection.treeIntersection(tree1,tree2));
+        Assertions.assertEquals(12, TreeIntersection.secondMax(tree2.getRoot()));
+        Assertions.assertEquals(2, TreeIntersection.secondMin(tree2.getRoot()));
+        Assertions.assertEquals(4, TreeIntersection.countLeafIterative(tree2.getRoot()));
+        Assertions.assertEquals(4, TreeIntersection.countLeafNodes(tree2.getRoot()));
+
+
     }
 }

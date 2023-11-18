@@ -9,8 +9,15 @@ package CC15.app.src.main.java.cc15.app;
 
 public class App {
     public static void main(String[] args) {
-//        BinaryTree tree =new BinaryTree();
-//        tree.createBinaryTree();//    3 <--1--> 2
+        BinaryTree tree =new BinaryTree();
+        tree.createBinaryTree();//    3 <--1--> 2
+        BinaryTree tree2 =new BinaryTree();
+        tree2.createBinaryTree();//    3 <--1--> 2
+        tree2.invertTree(tree2.getRoot());
+//        System.out.println(tree.rootToLeafSum(tree.getRoot(),4));
+//        System.out.println(tree.height(tree.getRoot()));
+//        System.out.println(tree.heightIterative(tree.getRoot()));
+//        System.out.println(BinaryTree.identicalTrees(tree,tree2));
 //        System.out.println(tree.iterativePreOrderTraversal(tree.getRoot()));
 //        System.out.println();
 //        System.out.println(tree.iterativeInOrderTraversal(tree.getRoot()));
@@ -18,9 +25,10 @@ public class App {
 //        System.out.println(tree.iterativePostOrderTraversal(tree.getRoot()));
 
         ////// BST
-        BinarySearchTree bst = new BinarySearchTree();
-      bst.createBinarySearchTree();         //   2 <--1--> 3
-        bst.insertNumberAtBST(5);
-        System.out.println("value founded: "+bst.search(5));
+//        BinarySearchTree bst = new BinarySearchTree();
+//      bst.createBinarySearchTree();         //   2 <--1--> 3
+//        bst.insertNumberAtBST(5);
+//        System.out.println("value founded: "+bst.search(5));
     }
+
 }
