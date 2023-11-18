@@ -39,7 +39,7 @@ public class BinaryTree {
 
         return leafCount1 == leafCount2;
     }
-    private static int countLeafNodes(TreeNode node) {
+    public static int countLeafNodes(TreeNode node) {
         if (node == null) {
             return 0;
         }
@@ -68,5 +68,6 @@ public class BinaryTree {
         root.left.left = new TreeNode(40);
         return root;
     }
+
 }
 
