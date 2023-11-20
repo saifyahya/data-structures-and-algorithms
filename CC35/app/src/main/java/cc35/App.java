@@ -13,7 +13,7 @@ public class App {
         graph.addEdge(3,0);
         System.out.println(graph);
 
-        Graph myGraph = new Graph<>(5);
+        Graph myGraph = new Graph<>(4);
         Vertex one = new Vertex<>(1);
         Vertex two = new Vertex<>(2);
         Vertex three = new Vertex<>(3);
@@ -27,6 +27,7 @@ public class App {
         myGraph.addEdge(three,four);
         myGraph.addEdge(four,one);
         System.out.println(myGraph);
+        System.out.println(myGraph.bfs(one.value));
 
 
 
