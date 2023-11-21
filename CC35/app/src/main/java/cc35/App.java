@@ -6,12 +6,12 @@ package CC35.app.src.main.java.cc35;
 public class App {
 
     public static void main(String[] args) {
-        GraphAdjList graph = new GraphAdjList(4);
-        graph.addEdge(0,1);
-        graph.addEdge(1,2);
-        graph.addEdge(2,3);
-        graph.addEdge(3,0);
-        System.out.println(graph);
+//        GraphAdjList graph = new GraphAdjList(4);
+//        graph.addEdge(0,1);
+//        graph.addEdge(1,2);
+//        graph.addEdge(2,3);
+//        graph.addEdge(3,0);
+//        System.out.println(graph);
 
         Graph myGraph = new Graph<>(4);
         Vertex one = new Vertex<>(1);
@@ -26,8 +26,14 @@ public class App {
         myGraph.addEdge(two,three);
         myGraph.addEdge(three,four);
         myGraph.addEdge(four,one);
-        System.out.println(myGraph);
-        System.out.println(myGraph.bfs(one.value));
+        System.out.println(myGraph);                 // print the graph
+        System.out.println(myGraph.getVertices());      // print all the vertices
+        System.out.println(myGraph.getNeighbors(one).toString());       // print neighbours of a vertex
+        System.out.println(myGraph.bfs(one));       // traverse the graph using BFS with starting point = vertex one
+        System.out.println(myGraph.bfs(two));       // traverse the graph using BFS with starting point = vertex two
+        System.out.println(myGraph.bfs(three));       // traverse the graph using BFS with starting point = vertex three
+        System.out.println(myGraph.bfs(four));       // traverse the graph using BFS with starting point = vertex four
+
 
 
 

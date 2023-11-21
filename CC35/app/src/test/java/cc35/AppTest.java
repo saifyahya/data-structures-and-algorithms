@@ -3,9 +3,74 @@
  */
 package CC35.app.src.test.java.cc35;
 
+import CC35.app.src.main.java.cc35.Edge;
+import CC35.app.src.main.java.cc35.Graph;
+import CC35.app.src.main.java.cc35.Vertex;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+    @Test
+    public void testAddVertex(){
+        Graph myGraph = new Graph<>(4);
+        Vertex one = new Vertex<>(1);
+        Assertions.assertEquals(one,myGraph.addVertex(one));
+    }
+    @Test
+    public void TestAddEdge(){
+        Graph myGraph = new Graph<>(4);
+        Vertex one = new Vertex<>(1);
+        Vertex two = new Vertex<>(2);
+        myGraph.addVertex(one);
+        myGraph.addVertex(two);
+        myGraph.addEdge(one,two);
+        LinkedList<Edge> expectedResult =new LinkedList<>();
+        expectedResult.add(new Edge<>(two));
+        Assertions.assertTrue(expectedResult.toString().equals( myGraph.getNeighbors(one).toString()));
+    }
 
+    @Test
+    public void testGetVertices(){
+        Graph myGraph = new Graph<>(4);
+        Vertex one = new Vertex<>(1);
+        Vertex two = new Vertex<>(2);
+        Vertex three = new Vertex<>(3);
+        Vertex four = new Vertex<>(4);
+        myGraph.addVertex(one);
+        myGraph.addVertex(two);
+        myGraph.addVertex(three);
+        myGraph.addVertex(four);
+        Set<Vertex> expectedResult= Set.of(one,two,three,four);
+        Assertions.assertTrue(expectedResult.equals(myGraph.getVertices()));
+    }
+
+    @Test
+    public void testBFS(){
+        Graph myGraph = new Graph<>(4);
+        Vertex one = new Vertex<>(1);
+        Vertex two = new Vertex<>(2);
+        Vertex three = new Vertex<>(3);
+        Vertex four = new Vertex<>(4);
+        myGraph.addVertex(one);
+        myGraph.addVertex(two);
+        myGraph.addVertex(three);
+        myGraph.addVertex(four);
+
+        myGraph.addEdge(one,two);
+        myGraph.addEdge(two,three);
+        myGraph.addEdge(three,four);
+        myGraph.addEdge(four,one);
+        
+        Assertions.assertEquals(List.of(1,2,4,3) ,myGraph.bfs(one));       // traverse the graph using BFS with starting point = vertex one
+        Assertions.assertEquals(List.of(2,1,3,4) ,myGraph.bfs(two));       // traverse the graph using BFS with starting point = vertex one
+        Assertions.assertEquals(List.of(3,2,4,1) ,myGraph.bfs(three));       // traverse the graph using BFS with starting point = vertex one
+        Assertions.assertEquals(List.of(4,3,1,2) ,myGraph.bfs(four));       // traverse the graph using BFS with starting point = vertex one
+    }
 }

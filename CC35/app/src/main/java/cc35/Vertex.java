@@ -31,4 +31,10 @@ public class Vertex<T extends Comparable<? super T>> implements Comparable<Verte
     }
 
 
+    @Override
+    public String toString() {
+        return "Vertex{" +
+                "value=" + value +
+                '}';
+    }
 }
