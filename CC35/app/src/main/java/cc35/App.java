@@ -13,26 +13,52 @@ public class App {
 //        graph.addEdge(3,0);
 //        System.out.println(graph);
 
-        Graph myGraph = new Graph<>(4);
-        Vertex one = new Vertex<>(1);
-        Vertex two = new Vertex<>(2);
-        Vertex three = new Vertex<>(3);
-        Vertex four = new Vertex<>(4);
-        myGraph.addVertex(one);
-        myGraph.addVertex(two);
-        myGraph.addVertex(three);
-        myGraph.addVertex(four);
-        myGraph.addEdge(one,two);
-        myGraph.addEdge(two,three);
-        myGraph.addEdge(three,four);
-        myGraph.addEdge(four,one);
-        System.out.println(myGraph);                 // print the graph
-        System.out.println(myGraph.getVertices());      // print all the vertices
-        System.out.println(myGraph.getNeighbors(one).toString());       // print neighbours of a vertex
-        System.out.println(myGraph.bfs(one));       // traverse the graph using BFS with starting point = vertex one
-        System.out.println(myGraph.bfs(two));       // traverse the graph using BFS with starting point = vertex two
-        System.out.println(myGraph.bfs(three));       // traverse the graph using BFS with starting point = vertex three
-        System.out.println(myGraph.bfs(four));       // traverse the graph using BFS with starting point = vertex four
+//        Graph myGraph = new Graph<>(4);
+//        Vertex one = new Vertex<>(1);
+//        Vertex two = new Vertex<>(2);
+//        Vertex three = new Vertex<>(3);
+//        Vertex four = new Vertex<>(4);
+//        myGraph.addVertex(one);
+//        myGraph.addVertex(two);
+//        myGraph.addVertex(three);
+//        myGraph.addVertex(four);
+//        myGraph.addEdge(one,two);
+//        myGraph.addEdge(two,three);
+//        myGraph.addEdge(three,four);
+//        myGraph.addEdge(four,one);
+//        System.out.println(myGraph);                 // print the graph
+//        System.out.println(myGraph.getVertices());      // print all the vertices
+//        System.out.println(myGraph.getNeighbors(one).toString());       // print neighbours of a vertex
+//        System.out.println(myGraph.bfs(one));       // traverse the graph using BFS with starting point = vertex one
+//        System.out.println(myGraph.bfs(two));       // traverse the graph using BFS with starting point = vertex two
+//        System.out.println(myGraph.bfs(three));       // traverse the graph using BFS with starting point = vertex three
+//        System.out.println(myGraph.bfs(four));       // traverse the graph using BFS with starting point = vertex four
+
+        Graph cities = new Graph<>(4);
+        Vertex amman = new Vertex<>("amman");
+        Vertex jerash = new Vertex<>("jerash");
+        Vertex ajloun = new Vertex<>("ajloun");
+        Vertex irbid = new Vertex<>("irbid");
+        cities.addVertex(amman);
+        cities.addVertex(jerash);
+        cities.addVertex(ajloun);
+        cities.addVertex(irbid);
+        cities.addEdge(amman,jerash,6);
+        cities.addEdge(jerash,ajloun,5);
+        cities.addEdge(ajloun,irbid,10);
+        cities.addEdge(irbid,amman,8);
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","jerash"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","jerash","amman","amman"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","irbid"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"irbid","jerash"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","jerash","ajloun"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","ajloun","irbid"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","jerash","ajloun","irbid","amman"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman","amman"}));
+        System.out.println(cities.businessTrip(cities,new String[]{"amman"}));
+
+
+
 
 
 

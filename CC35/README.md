@@ -68,3 +68,25 @@ this method traverse the graph level-by-level starting from a given vertex.
 
 ## Solution
 ![solution](../assets/cc36-sol.png)
+
+## business trip
+a Graph represents cities and airline between them and a cost for the trip, given the current city and the destination city, determine either there is a possible direct flight between them or not. in case the flight is founded: return the cost for the trip.
+
+## Approach and Efficiency
+- Initialize a total cost of zero and a founded city equal false .
+- *Edge cases:* if the trip inside the same city or there is no city, return 0.
+- Check that the city is in our business trip itinerary, if not return null.
+- Check if the current city have a neighbor equals to the next city:
+1. no  equals neighbor: return null.
+2. there is an equal neighbor: add the cost to the total cost and update founded city to true.
+- Check if the founded city is true, go to the next city and re-assign founded city to false, else, return null.
+- If we reached the last city: don't check the neighbors, then return the total cost .
+
+- Space Complexity: *O(1)*.
+- Time Complexity: *O(n*max(v,e))*, n: number of cities in the array. v:number of vertices. e: number of edges.
+
+## Whiteboard process
+![whiteboard](../assets/cc37-whiteboard.png)
+
+## Solution
+![solution](../assets/cc37-sol.png)
