@@ -48,7 +48,7 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
 
     }
 
-    public List<Edge<T>> getNeighbors(T vertex)
+    public List<Edge<T>> getNeighbors(Vertex vertex)
     {
  return adjacencyLists.get(vertex);
     }
@@ -108,5 +108,42 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
         }
         return maxVertexValue;
     }
+
+    public Integer businessTrip(Graph graph, String[] cities){
+        int totalCost=0;
+        if(cities.length==0 || cities.length==1)
+            return totalCost;
+        Vertex retrievedVertex=null;
+        boolean cityFounded = false;
+        for(int i = 0 ; i<cities.length;i++){
+            retrievedVertex=findVertexFromValue((T) cities[i]);
+            if(retrievedVertex==null)
+            return null;
+            if(i<cities.length-1 && cities[i].equals(cities[i+1]))  // two same cities, go from city to the same city
+            {
+                cityFounded=true;
+                continue ;}
+            for(Object edge: graph.getNeighbors(retrievedVertex)){
+                Edge retrievedEdge= (Edge) edge;
+                if( i<cities.length-1 && retrievedEdge.destination.value.equals((T) cities[i+1])){  //search for neighbours unless we reach last vertex
+                    totalCost+=retrievedEdge.weight;
+                    cityFounded=true;
+                }
+            }
+            if(cityFounded==false)
+            return null;
+            if(i!=cities.length-2)    //because next vertex will be the last one, and I don't want to check cityFounded for it
+                cityFounded=false;
+        }
+        return totalCost;
+    }
+    private Vertex findVertexFromValue(T value){
+        for(Vertex vertex:adjacencyLists.keySet()){
+            if(vertex.value.equals(value))
+                return vertex;
+        }
+        return null;
+    }
+
 
 }

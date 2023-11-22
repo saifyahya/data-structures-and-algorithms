@@ -73,4 +73,27 @@ class AppTest {
         Assertions.assertEquals(List.of(3,2,4,1) ,myGraph.bfs(three));       // traverse the graph using BFS with starting point = vertex one
         Assertions.assertEquals(List.of(4,3,1,2) ,myGraph.bfs(four));       // traverse the graph using BFS with starting point = vertex one
     }
+
+    @Test public void testBusinessTrip(){
+        Graph cities = new Graph<>(4);
+        Vertex amman = new Vertex<>("amman");
+        Vertex jerash = new Vertex<>("jerash");
+        Vertex ajloun = new Vertex<>("ajloun");
+        Vertex irbid = new Vertex<>("irbid");
+        cities.addVertex(amman);
+        cities.addVertex(jerash);
+        cities.addVertex(ajloun);
+        cities.addVertex(irbid);
+        cities.addEdge(amman,jerash,6);
+        cities.addEdge(jerash,ajloun,5);
+        cities.addEdge(ajloun,irbid,10);
+        cities.addEdge(irbid,amman,8);
+
+        Assertions.assertEquals(6,cities.businessTrip(cities, new String[]{"amman","jerash"}));
+        Assertions.assertEquals(12,cities.businessTrip(cities, new String[]{"amman","jerash","amman","amman"}));
+        Assertions.assertEquals(null,cities.businessTrip(cities, new String[]{"irbid","jerash"}));
+        Assertions.assertEquals(null,cities.businessTrip(cities, new String[]{"amman","ajloun","irbid"}));
+        Assertions.assertEquals(0,cities.businessTrip(cities, new String[]{"amman","amman"}));
+
+    }
 }
