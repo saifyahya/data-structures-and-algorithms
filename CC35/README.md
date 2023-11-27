@@ -90,3 +90,26 @@ a Graph represents cities and airline between them and a cost for the trip, give
 
 ## Solution
 ![solution](../assets/cc37-sol.png)
+
+## DFS Traversal
+Traverse the graph from a giving vertex using depth-first approach, the function uses a stack since it is *L-I-F-O* we can traverse the neighbors of the vertex and go to the maximum depth. 
+
+## Approach and Efficiency
+- Initialize a *list* to store the result and a boolean array with size equals the maximum value in the graph to track the visited vertices .
+- Initialize a *stack* and push the given vertex.
+- Iterate over the stack elements:
+- Create a *temp* vertex to pop from the *stack*.
+- Check if the temp value = false *(not visited)* in the boolean array:
+- Convert it to ture *(visited)* and add the value to the result list.
+- Iterate over the *edges* of the temp vertex and check if and value of the is not visited (equals false in the boolean array):
+- Add it to the stack.
+- When the *Stack* is empty: return the list.
+
+- Space Complexity: *O(max vertex value)*.
+- Time Complexity: *O(n)*.
+
+## Whiteboard process
+![whiteboard](../assets/cc38-whiteboard.png)
+
+## Solution
+![solution](../assets/cc38-sol.png)

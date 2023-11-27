@@ -74,6 +74,49 @@ class AppTest {
         Assertions.assertEquals(List.of(4,3,1,2) ,myGraph.bfs(four));       // traverse the graph using BFS with starting point = vertex one
     }
 
+    @Test
+    public void testDFS(){
+        Graph myGraph = new Graph<>(4);
+        Vertex one = new Vertex<>(1);
+        Vertex two = new Vertex<>(2);
+        Vertex three = new Vertex<>(3);
+        Vertex four = new Vertex<>(4);
+        myGraph.addVertex(one);
+        myGraph.addVertex(two);
+        myGraph.addVertex(three);
+        myGraph.addVertex(four);
+
+        myGraph.addEdge(one,two);
+        myGraph.addEdge(two,three);
+        myGraph.addEdge(three,four);
+        myGraph.addEdge(four,one);
+
+        Assertions.assertEquals(List.of(1,4,3,2) ,myGraph.dfs(one));       // traverse the graph using DFS with starting point = vertex one
+        Assertions.assertEquals(List.of(2,3,4,1) ,myGraph.dfs(two));       // traverse the graph using DFS with starting point = vertex one
+        Assertions.assertEquals(List.of(3,4,1,2) ,myGraph.dfs(three));       // traverse the graph using DFS with starting point = vertex one
+        Assertions.assertEquals(List.of(4,1,2,3) ,myGraph.dfs(four));       // traverse the graph using DFS with starting point = vertex one
+    }
+
+    @Test
+    public void testDFS2(){
+        Graph myGraph = new Graph<>(4);
+        Vertex one = new Vertex<>(1);
+        Vertex two = new Vertex<>(2);
+        Vertex three = new Vertex<>(3);
+        Vertex four = new Vertex<>(4);
+        myGraph.addVertex(one);
+        myGraph.addVertex(two);
+        myGraph.addVertex(three);
+        myGraph.addVertex(four);
+
+        myGraph.addEdge(one,two);
+        myGraph.addEdge(two,three);
+        myGraph.addEdge(one,four);
+
+        Assertions.assertEquals(List.of(1,4,2,3) ,myGraph.dfs(one));       // traverse the graph using DFS with starting point = vertex one
+
+    }
+
     @Test public void testBusinessTrip(){
         Graph cities = new Graph<>(4);
         Vertex amman = new Vertex<>("amman");
