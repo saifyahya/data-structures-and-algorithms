@@ -100,6 +100,27 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
         }
         return result;
     }
+
+    public List<T> dfs(Vertex<T> vertex){
+        List<T> result = new ArrayList<>();
+        int maximumValue_inTheGraph = findMaxVertexValue();
+        boolean[] visited = new boolean[maximumValue_inTheGraph+1];
+        Stack<Vertex> stack = new Stack<>();
+        stack.push(vertex);
+        while (!stack.isEmpty()){
+            Vertex<T> temp =stack.pop();
+            if(!visited[(Integer) temp.value]){
+                visited[(Integer) temp.value]=true;
+                result.add((T) temp.value);
+            for (Edge<T> edge: adjacencyLists.get(temp)){
+                if(!visited[(Integer) edge.destination.value]){
+                    stack.push(edge.destination);
+                }
+            }
+            }
+        }
+        return result;
+    }
     private int findMaxVertexValue() {
         int maxVertexValue = Integer.MIN_VALUE;
         for (Vertex<T> vertex : adjacencyLists.keySet()) {
