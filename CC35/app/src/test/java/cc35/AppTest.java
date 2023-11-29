@@ -139,4 +139,19 @@ class AppTest {
         Assertions.assertEquals(0,cities.businessTrip(cities, new String[]{"amman","amman"}));
 
     }
+@Test
+    public void testMatrix2List(){
+        Graph myGraph2 = new Graph<>(4);
+        boolean[][] adjacencyMatrix = {
+                {false,true,false,false,true},
+                {true,false,true,true,false},
+                {false,true,false,true,false},
+                {false,true,true,false,true},
+                {true,false,false,true,false}};
+        Vertex [] vertices={ new Vertex<>("a"),new Vertex<>("b"),new Vertex<>("c"),new Vertex<>("d"),new Vertex<>("e")};
+        myGraph2.adjacencyListFromMatrix(vertices,adjacencyMatrix);
+
+        Assertions.assertEquals(Set.of(new Edge( new Vertex<>("b"),0),new Edge(new Vertex<>("e"),0)).toString(),myGraph2.getNeighbors(new Vertex<>("a")).toString());
+
+    }
 }
