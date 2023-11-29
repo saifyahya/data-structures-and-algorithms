@@ -1,6 +1,7 @@
 package CC35.app.src.main.java.cc35;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<T>>  // just in case you have Comparable data structures
 {
@@ -166,5 +167,29 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
         return null;
     }
 
+    public void adjacencyListFromMatrix(Vertex<T>[] vertices, boolean[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            adjacencyLists.putIfAbsent(vertices[i], new LinkedList<>());
+            numberOfVertices++;
+
+            for (int j = 0; j < matrix[i].length; j++) {
+                int finalJ=j;
+                if (matrix[i][j] && !adjacencyLists.get(vertices[i]).stream().anyMatch(edge -> edge.getDestination().equals(vertices[finalJ]))) {
+                    adjacencyLists.putIfAbsent(vertices[j], new LinkedList<>());
+                    Edge<T> edge1 = new Edge<>(vertices[i], 0);
+                    Edge<T> edge2 = new Edge<>(vertices[j], 0);
+
+                    adjacencyLists.get(vertices[j]).add(edge1);
+                    adjacencyLists.get(vertices[i]).add(edge2);
+                }
+            }
+        }
+    }
+
+    private boolean hasEdge(Vertex<T> source, Vertex<T> destination) {
+        return adjacencyLists.get(source)
+                .stream()
+                .anyMatch(edge -> edge.getDestination().equals(destination));
+    }
 
 }

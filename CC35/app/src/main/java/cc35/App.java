@@ -26,9 +26,20 @@ public class App {
         myGraph.addEdge(two,three);
         myGraph.addEdge(three,four);
         myGraph.addEdge(four,one);
+//        System.out.println(myGraph);                 // print the graph
+
+        Graph myGraph2 = new Graph<>(4);
+        boolean[][] adjacencyMatrix = {
+                {false,true,false,false,true},
+                {true,false,true,true,false},
+                {false,true,false,true,false},
+                {false,true,true,false,true},
+                {true,false,false,true,false}};
+        Vertex [] vertices={new Vertex<>("a"),new Vertex<>("b"),new Vertex<>("c"),new Vertex<>("d"),new Vertex<>("e")};
+        myGraph2.adjacencyListFromMatrix(vertices,adjacencyMatrix);
+        System.out.println(myGraph2);
 
 
-        System.out.println(myGraph);                 // print the graph
 //        System.out.println(myGraph.getVertices());      // print all the vertices
 //        System.out.println(myGraph.getNeighbors(one).toString());       // print neighbours of a vertex
      //   System.out.println(myGraph.bfs(one));       // traverse the graph using BFS with starting point = vertex one
