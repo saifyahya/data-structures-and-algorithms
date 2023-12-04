@@ -117,6 +117,7 @@ Traverse the graph from a giving vertex using depth-first approach, the function
 ## adjacencyMatrix to adjacencyList
 - giving a 2d matrix represents adjacency matrix of a graph, and an array represents the vertices in the graph.
 - return the adjacency list representation of the graph.
+
 ## Approach and Efficiency
 - Using a nested for loop to iterate over the 2d matrix.
 - adding the current vertex (index of outer loop) in the array to the adjacency list.
@@ -126,8 +127,9 @@ Traverse the graph from a giving vertex using depth-first approach, the function
 - Space Complexity: *O(max vertex value)*.
 - time complexity is O(V^2 + E), where V is the number of vertices and E is the number of edges.
 - space complexity is O(V + E), where V is the number of vertices and E is the number of edges.
+
 ## Whiteboard process
-![whiteboard](../assets/cc38-whiteboard.png)
+![whiteboard](../assets/cc39-whiteboard.png)
 
 ## Solution
-![solution](../assets/cc38-sol.png)
+![solution](../assets/cc39-sol.png)
