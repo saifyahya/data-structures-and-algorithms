@@ -30,6 +30,7 @@
 | [Challenge37 (Graph Business Trip)](CC35/README.md)                                          |
 | [Challenge38 (Graph DFS)](CC35/README.md)                                                    |
 | [Challenge39 (Graph matrix2list)](CC35/README.md)                                            |
+| [Challenge41 (Navigator Class)](cc41/README.md)                                              |
 
 
 
