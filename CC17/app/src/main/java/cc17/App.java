@@ -13,5 +13,6 @@ public class App {
         BinaryTree tree = new BinaryTree();
         tree.createBinaryTree();
         System.out.println(tree.breadthFirst((tree.getRoot())));
+        System.out.println(tree.maxDepth(tree.getRoot()));
     }
 }
